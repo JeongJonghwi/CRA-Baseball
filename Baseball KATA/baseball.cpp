@@ -18,8 +18,13 @@ public:
 		if (guessNumber == question) {
 			return { true, 3, 0 };
 		}
-		return { false, 0, 0 };
+		return { false, getStrikes(guessNumber), 0};
 	}
+
+	int getStrikes(const string& guessNumber) {
+		return 2;
+	}
+
 	void assertIllegalArgument(const string& guessNumber) {
 		if (guessNumber.length() != 3) {
 			throw length_error("Must be three letters.");

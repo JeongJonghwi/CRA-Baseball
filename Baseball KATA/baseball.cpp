@@ -22,7 +22,11 @@ public:
 	}
 
 	int getStrikes(const string& guessNumber) {
-		return 2;
+		int result = 0;
+		if (guessNumber[0] == question[0]) result++;
+		if (guessNumber[1] == question[1]) result++;
+		if (guessNumber[2] == question[2]) result++;
+		return result;
 	}
 
 	void assertIllegalArgument(const string& guessNumber) {
